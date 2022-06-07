@@ -34,8 +34,8 @@ git-download = "0.1"
 
 ## Implementation
 
-Internally, git-download uses sparse-checkout to download designated files not all the repository.
+Internally, git-download uses sparse-checkout to download designated files not the entire repository.
 
 The downloaded files are firstly put in temporary directory which is created by tempfile crate.
-In Linux, the directory is created in tmpfs which is in-memory filesystem.
+In Linux, the directory is created in tmpfs which is an in-memory filesystem.
 Therefore, no disk write occurs before copying the file in the tmpfs to the destination path. We can avoid writing the unchanged content by comparing the content before copying.
