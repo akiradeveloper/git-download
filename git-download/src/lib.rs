@@ -73,7 +73,6 @@ impl Downloader {
         let branch_name = &self.branch_name;
         run_cmd! {
             git pull origin $branch_name;
-            tree;
         }?;
 
         for req in &self.copy_requests {
