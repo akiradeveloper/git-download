@@ -8,10 +8,12 @@ pub fn repo(path: impl Into<String>) -> Downloader {
     Downloader::new(path)
 }
 
+#[derive(Debug)]
 struct CopyRequest {
     from: PathBuf,
     to: PathBuf,
 }
+#[derive(Debug)]
 pub struct Downloader {
     repo_path: String,
     branch_name: String,
